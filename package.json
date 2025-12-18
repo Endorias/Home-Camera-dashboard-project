@@ -1,0 +1,19 @@
+{
+  "name": "ip-camera-viewer",
+  "version": "1.0.0",
+  "description": "Local web interface for viewing IP cameras on home network",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node server/index.js"
+  },
+  "keywords": ["ip-camera", "rtsp", "mjpeg", "surveillance"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.3.1"
+  }
+}

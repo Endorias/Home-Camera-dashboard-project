@@ -1,0 +1,28 @@
+# go2rtc Configuration File
+# This file configures the go2rtc streaming proxy
+
+# API and Web Interface
+api:
+  listen: ":1984"  # Web UI available at http://localhost:1984
+
+# WebRTC configuration
+webrtc:
+  listen: ":8555/tcp"
+  candidates:
+    - 192.168.1.0/24:8555  # Your local network range
+    - stun:stun.l.google.com:19302
+
+# RTSP server (optional - if you want to re-stream)
+rtsp:
+  listen: ":8554"
+
+# Stream definitions
+streams:
+  camera_3:
+    - rtsp://admin:admin123@192.168.1.142:554
+    - "ffmpeg:rtsp://admin:admin123@192.168.1.142:554#video=copy#audio=copy#rtsp_transport=tcp"
+
+# Logging
+log:
+  level: debug  # Changed to debug to see connection details
+  format: text
